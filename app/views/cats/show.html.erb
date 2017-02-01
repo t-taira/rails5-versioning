@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+バージョン:
+<% @cat.versions.each_with_index do |version| %>
+  <%= link_to version.id, approve_cat_path(@cat, version: version.id) %>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cat.name %>
+</p>
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>

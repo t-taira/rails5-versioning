@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+バージョン:
+<% @dog.versions.each_with_index do |version| %>
+  <%= link_to version.id, approve_dog_path(@dog, version: version.id) %>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @dog.age %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %>
+|
+<%= link_to 'Back', dogs_path %>
